@@ -128,8 +128,8 @@ public class N_Rod_Length_Problem extends JFrame {
             System.out.print(completeCut[j] + " ");
         }
         System.out.println();
-        System.out.println(val[price.length]);
-        rodPanel.drawCutPiece(completeCut, n);
+        System.out.println();
+        rodPanel.drawCutPiece(completeCut, n , val[price.length]);
     }
 
     public static void main(String[] args) {
@@ -143,11 +143,10 @@ public class N_Rod_Length_Problem extends JFrame {
 class RodPanel extends JPanel {
 
     private int[] cutIndexes;
-    private int rodSize;
-
-    public void drawCutPiece(int[] cuts, int size) {
+    private double maxCost;
+    public void drawCutPiece(int[] cuts, int size , double max_cost) {
         cutIndexes = cuts;
-        rodSize = size;
+        maxCost = max_cost;
         repaint();
     }
 
@@ -167,10 +166,9 @@ class RodPanel extends JPanel {
                 }
                 startX += 60; // Adjust spacing between cut pieces
             }
-
+            g.setColor(Color.BLUE);
+            g.drawString("Maximum price after sold is :"+String.valueOf(maxCost), 20, startY + 40);
             // Display rod size below the rod drawings
-
-
         }
     }
 }

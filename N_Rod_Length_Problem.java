@@ -167,7 +167,7 @@ class RodPanel extends JPanel {
                 startX += 60; // Adjust spacing between cut pieces
             }
             g.setColor(Color.BLUE);
-            g.drawString("Maximum price after sold is :"+String.valueOf(maxCost), 20, startY + 40);
+            g.drawString("Maximum price we get when sold is :"+String.valueOf(maxCost), 20, startY + 40);
             // Display rod size below the rod drawings
         }
     }
